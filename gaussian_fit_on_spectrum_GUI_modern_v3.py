@@ -127,7 +127,7 @@ class GaussianFitGUI:
 
         # --- Tkinter control variables (Unchanged) ---
         self.filename_var = tk.StringVar(value="No file loaded.")
-        self.x_type_var = tk.StringVar(value="Energy")
+        self.x_type_var = tk.StringVar(value="Wavelength")
         self.range_min_var = tk.StringVar(value="0")
         self.range_max_var = tk.StringVar(value="500")
         self.peak_label_var = tk.StringVar(value="Number of Peaks: 0")
@@ -164,7 +164,7 @@ class GaussianFitGUI:
         settings_frame.pack(side=tk.LEFT, padx=0, pady=5)
 
         ctk.CTkLabel(settings_frame, text="X-Data Type:").pack(side=tk.LEFT, padx=(5, 5))
-        ctk.CTkRadioButton(settings_frame, text="Energy", variable=self.x_type_var, value="Energy", radiobutton_width=14, radiobutton_height=14,
+        ctk.CTkRadioButton(settings_frame, text="Wavelength", variable=self.x_type_var, value="Wavelength", radiobutton_width=14, radiobutton_height=14,
                             command=self.update_plot).pack(side=tk.LEFT)
         ctk.CTkRadioButton(settings_frame, text="Channel", variable=self.x_type_var, value="Channel", radiobutton_width=14, radiobutton_height=14,
                             command=self.update_plot).pack(side=tk.LEFT, padx=(0, 0))
@@ -260,8 +260,8 @@ class GaussianFitGUI:
             self.height_slider.configure(to=max_y)
             self.height_slider.set(max_y / 10) 
             
-            self.range_min_var.set(str(np.min(self.x_energy_full if self.x_type_var.get() == "Energy" else self.x_channel_full)))
-            self.range_max_var.set(str(np.max(self.x_energy_full if self.x_type_var.get() == "Energy" else self.x_channel_full)))
+            self.range_min_var.set(str(np.min(self.x_energy_full if self.x_type_var.get() == "Wavelength" else self.x_channel_full)))
+            self.range_max_var.set(str(np.max(self.x_energy_full if self.x_type_var.get() == "Wavelength" else self.x_channel_full)))
 
             plt.rcParams['savefig.directory'] = os.path.dirname(self.filename)
             self.fig.set_label(f"{os.path.basename(self.filename).rsplit('.', 1)[0]}_gaussian_fit_results")
@@ -280,7 +280,7 @@ class GaussianFitGUI:
             self.ax.set_xlabel("Channel", fontsize=14)
         else:
             self.xdata = self.x_energy_full
-            self.ax.set_xlabel("Energy (eV)", fontsize=14)
+            self.ax.set_xlabel("Wavelength (nm)", fontsize=14)
 
     def get_peaks(self, y_data, height, distance=50):
         peak_indices, _ = find_peaks(y_data, height=height, distance=distance)
