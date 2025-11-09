@@ -1,6 +1,6 @@
 # X-Ray Spectrum Fitter
 
-A modern, standalone GUI application built with CustomTkinter for loading, visualizing, and fitting Gaussian peaks to spectrum data. This tool is specifically designed to work with data files from applications like the **ESRF's PyMca**, supporting its common data structures.
+A modern, standalone GUI application built with CustomTkinter for loading, visualizing, and fitting Gaussian peaks to spectrum data. This tool is specifically designed to work with data files from applications like the **[ESRF PyMca](https://www.silx.org/pub/doc/PyMca/latest/)**, supporting its common data structures.
 
 <img src="gui_screenshot.png" alt="GUI Screenshot" width="800"/>'
 
@@ -8,7 +8,7 @@ A modern, standalone GUI application built with CustomTkinter for loading, visua
 
 * **Modern Interface:** Clean and theme-able UI built with `customtkinter`.
 * **Data Loading:** Loads `.txt` and `.csv` files, automatically detecting common delimiters (comma, tab, whitespace).
-* **PyMca-Aware:** Optimized for **ESRF PyMca** data. It correctly parses files with `Channel`, `Counts`, and `Energy` columns.
+* **PyMca-Aware:** Optimized for **[ESRF PyMca](https://www.silx.org/pub/doc/PyMca/latest/)** data. It correctly parses files with `Channel`, `Counts`, and `Energy` columns.
 * **Axis Selection:** Toggle the plot's x-axis between **Channel** and **Energy** (if energy data is present).
 * **Interactive Plotting:** Powered by Matplotlib, including navigation, zoom, and pan controls.
 * **Automatic Fitting:**
