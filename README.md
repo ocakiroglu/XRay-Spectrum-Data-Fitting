@@ -33,7 +33,8 @@ This tool is designed to be flexible but is optimized for data from PyMca.
 * **Column Structure:** The script expects data in the following order:
     1.  `Column 1`: **Channel**
     2.  `Column 2`: **Counts**
-    4.  `Last Column`: **Energy**
+    3.  `Last Column`: **Energy**
+       **PS**: While PyMca may label last column as **Energy (eV)**, this tool can also process data where this column is actually **Wavelength (nm)**.
 
 ## 🛠️ Installation & Requirements
 
@@ -112,5 +113,6 @@ Activate the environment and then follow this steps:
 This project is licensed under the MIT License. See the `LICENSE` file for details.
 
 ## 🙏 Acknowledgments
+
 
 This code was developed with coding assistance from **Google's Gemini** and **Github Copilot**.
