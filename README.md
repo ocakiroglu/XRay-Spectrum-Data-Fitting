@@ -34,7 +34,8 @@ This tool is designed to be flexible but is optimized for data from PyMca.
     1.  `Column 1`: **Channel**
     2.  `Column 2`: **Counts**
     3.  `Last Column`: **Energy**
-       **PS**: While PyMca may label last column as **Energy (eV)**, this tool can also process data where this column is actually **Wavelength (nm)**.
+
+**PS**: While PyMca may label last column as **Energy (eV)**, this tool can process data where this column is actually **Wavelength (nm)**.
 
 ## 🛠️ Installation & Requirements
 
@@ -116,3 +117,4 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 
 This code was developed with coding assistance from **Google's Gemini** and **Github Copilot**.
+
